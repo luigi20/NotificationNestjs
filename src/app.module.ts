@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { PrismaModule } from './prisma/prisma.module';
+import { NotificationModule } from './notification/create_notification/notification.module';
+import { GetNotificationModule } from './notification/get_notification/get_notification.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [GetNotificationModule, PrismaModule, NotificationModule],
+  controllers: [],
+  providers: [],
 })
-export class AppModule {}
+export class AppModule { }
