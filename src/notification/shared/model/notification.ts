@@ -12,22 +12,22 @@ export interface NotificationProps {
 }
 
 export class Notification {
-  private _id: string;
+  private id: string;
   private props: NotificationProps;
 
   constructor(
     props: Replace<NotificationProps, { createdAt?: Date }>,
     id?: string,
   ) {
-    this._id = id ?? randomUUID();
+    this.id = id ?? randomUUID();
     this.props = {
       ...props,
       createdAt: props.createdAt ?? new Date(),
     };
   }
 
-  public get id() {
-    return this._id;
+  public get _id() {
+    return this.id;
   }
 
   public set recipientId(recipientId: string) {
