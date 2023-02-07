@@ -1,5 +1,5 @@
 class ISendNotificationRequest {
-  recipientId: string;
+  recipient_id: string;
   content: string;
   category: string;
 }

@@ -1,9 +1,9 @@
-import { Replace } from 'src/helpers/Replace';
+import { Replace } from '@helpers/replace';
 import { randomUUID } from 'node:crypto';
-import { Content } from './notification-content';
+import { Content } from '@model/model/notification-content';
 
 export interface NotificationProps {
-  recipientId: string;
+  recipient_id: string;
   content: Content;
   category: string;
   readAt?: Date | null;
@@ -30,12 +30,12 @@ export class Notification {
     return this.id;
   }
 
-  public set recipientId(recipientId: string) {
-    this.props.recipientId = recipientId;
+  public set recipient_id(recipient_id: string) {
+    this.props.recipient_id = recipient_id;
   }
 
-  public get recipientId(): string {
-    return this.props.recipientId;
+  public get recipient_id(): string {
+    return this.props.recipient_id;
   }
 
   public set content(content: Content) {

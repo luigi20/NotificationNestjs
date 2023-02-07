@@ -2,18 +2,18 @@ import { Module } from '@nestjs/common';
 import { PrismaModule } from '../../infra/prisma/prisma.module';
 import { INotificationRepository } from '@model/repositories/abstract_class/INotificationRepository';
 import { NotificationRepository } from '@model/repositories/NotificationRepository';
-import { SendNotificationController } from './controllers/send-notification-controller';
-import { SendNotificationService } from './service/send_notification.service';
+import { CancelNotificationController } from './controllers/cancel-notification-controller';
+import { CancelNotificationService } from './service/cancel_notification.service';
 
 @Module({
   imports: [PrismaModule],
-  controllers: [SendNotificationController],
+  controllers: [CancelNotificationController],
   providers: [
-    SendNotificationService,
+    CancelNotificationService,
     {
       provide: INotificationRepository,
       useClass: NotificationRepository,
     },
   ],
 })
-export class SendNotificationModule { }
+export class CancelNotificationModule { }

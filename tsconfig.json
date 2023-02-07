@@ -18,6 +18,23 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@infra/*": [
+        "src/infra/*"
+      ],
+      "@send_notification/*": [
+        "src/notification/send_notification/*"
+      ],
+      "@helpers/*": [
+        "src/helpers/*"
+      ],
+      "@model/*": [
+        "src/notification/shared/*"
+      ],
+      "@notification/*": [
+        "src/notification/*"
+      ],
+    }
   }
 }

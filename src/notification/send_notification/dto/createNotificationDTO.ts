@@ -3,7 +3,7 @@ import { IsNotEmpty, IsUUID, Length } from 'class-validator';
 export class CreateNotificationDTO {
   @IsNotEmpty()
   @IsUUID()
-  recipientId: string;
+  recipient_id: string;
 
   @IsNotEmpty()
   @Length(5, 240)
