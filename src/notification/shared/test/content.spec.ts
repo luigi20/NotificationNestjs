@@ -1,4 +1,4 @@
-import { Content } from '../shared/model/notification-content';
+import { Content } from '../model/notification-content';
 
 describe('Notification content', () => {
   it('it should be able to create a notification content ', () => {

@@ -7,6 +7,7 @@ import { PrismaNotificationMapper } from '@infra/prisma/PrismaNotificationMapper
 @Injectable()
 class NotificationRepository implements INotificationRepository {
   constructor(private prismaService: PrismaService) { }
+
   async create(notification: Notification): Promise<void> {
     const raw = PrismaNotificationMapper.toPrisma(notification);
     await this.prismaService.notifications.create({
@@ -35,6 +36,26 @@ class NotificationRepository implements INotificationRepository {
       },
       data: raw,
     });
+  }
+
+  async findManyByRecipientId(recipient_id: string): Promise<Notification[]> {
+    const notifications = await this.prismaService.notifications.findMany({
+      where: {
+        recipient_id,
+      },
+    });
+
+    return notifications.map(PrismaNotificationMapper.toDomain);
+  }
+
+  async countManyByRecipientId(recipient_id: string): Promise<number> {
+    const count = await this.prismaService.notifications.count({
+      where: {
+        recipient_id,
+      },
+    });
+
+    return count;
   }
 }
 export { NotificationRepository };

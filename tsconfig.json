@@ -13,12 +13,13 @@
     "strict": true,
     "incremental": true,
     "skipLibCheck": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
     "paths": {
       "@infra/*": [
         "src/infra/*"
@@ -34,7 +35,7 @@
       ],
       "@notification/*": [
         "src/notification/*"
-      ],
+      ]
     }
   }
 }

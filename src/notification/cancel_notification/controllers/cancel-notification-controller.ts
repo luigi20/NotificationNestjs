@@ -7,7 +7,7 @@ export class CancelNotificationController {
     private readonly cancelNotificationService: CancelNotificationService,
   ) { }
 
-  @Patch(':id')
+  @Patch(':id/cancel')
   public async cancel(@Param('id') id: string) {
     await this.cancelNotificationService.execute({
       notificationId: id,
