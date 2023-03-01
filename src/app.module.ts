@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { MessagingModule } from './infra/messaging/messaging.module';
 import { PrismaModule } from './infra/prisma/prisma.module';
 import { CancelNotificationModule } from './notification/cancel_notification/cancel_notification.module';
 import { CountNotificationModule } from './notification/count_recipient_notification/count_notification.module';
@@ -16,6 +17,7 @@ import { UnreadNotificationModule } from './notification/unread_notification/unr
     FromNotificationModule,
     CountNotificationModule,
     CancelNotificationModule,
+    MessagingModule,
   ],
   controllers: [],
   providers: [],
